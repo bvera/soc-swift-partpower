@@ -116,7 +116,7 @@
 				<p>
 				<form method="POST" oninput="resultado.value=Math.ceil(Math.log(SwiftNodes.valueAsNumber * HDDnode.valueAsNumber * 100) / Math.log(2)); ringtotal.value=Math.pow( 2 , resultado.value ); partreplica.value=(Replicas.valueAsNumber * Math.pow(2 , resultado.value))">
 				<input type="number" id="SwiftNodes" value="10"> Swift nodes?<br>
-				<input type="number" id="HDDnode" value="5" > <abbr title="SOC6 Uses the first HDD for SO, please consider this!">HDD per node?</abbr><br>
+				<input type="number" id="HDDnode" value="4" > <abbr title="SOC6 Uses the first HDD for SO, please consider this!">HDD per node?</abbr><br>
 				<input type="number" id="Replicas" value="3"> Replicas?<br><br>
 				Your Partition Power is: <b><output name="resultado"</output></b><br>
 				The total number of partitions in a ring is: <b><output name="ringtotal"></output></b><br>
