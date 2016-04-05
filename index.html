@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>SES: OSD Nodes Calculator</title>
+		<style type="text/css">
+		
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			height: 100%; 
+			max-height: 100%; 
+			font-family:Sans-serif;
+			line-height: 1.5em;
+		}
+		
+		#header {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100px; 
+			overflow: hidden;
+			background: #C0C0C0;
+		}
+		
+		#logo {
+			padding:10px;
+			float:left;
+		}
+		
+		main {
+			position: fixed;
+			top: 100px; 
+			left: 0; 
+			right: 0;
+			bottom: 0;
+			overflow: auto; 
+			background: #fff;
+		}
+		
+		.innertube {
+			margin: 15px; 
+		}
+		
+		p {
+			color: #555;
+		}
+
+		/* Menu */
+		nav { 
+			margin:0 auto; 
+			padding:0; 
+			float:right;
+		}
+		nav ul { 
+			list-style:none; 
+			padding:0; 
+			float:left;
+		}
+		nav ul li { 
+			margin:0; 
+			padding:0 0 0 8px; 
+			float:left;
+		}
+		nav ul li a { 
+			display:block; 
+			margin:0; 
+			padding:8px 20px; 
+			color:darkgreen; 
+			text-decoration:none;
+		}
+		nav ul li.active a, #top-nav ul li a:hover { 
+			color:#d3d3f9;
+		}
+				
+		/*IE6 fix*/
+		* html body{
+			padding: 100px 0 0 0; 
+		}
+		
+		* html main{ 
+			height: 100%; 
+			width: 100%; 
+		}
+		
+		</style>
+		
+	
+	</head>
+	
+	<body>		
+
+		<header id="header">
+			<div id="logo">
+				<h1>SOC: Swift Partition Power Calculator</h1>
+			</div>
+			<nav>
+				<div class="innertube">
+				<ul>
+					<li><a href="http://nubla.do/">nubla.do</a></li>
+					<li><a href="https://www.suse.com/documentation/suse-openstack-cloud-6/">SOC6 Docs</a></li>
+					<li><a href="http://docs.openstack.org/developer/swift/overview_ring.html">SWIFT Docs</a></li>
+				</ul>
+				</div>
+			</nav>
+		</header>
+				
+		<main>
+			<div class="innertube">
+	
+				<!--  <h1>Heading</h1> -->
+				
+			
+				<p>
+				<form method="POST" oninput="resultado.value=Math.ceil(Math.log(SwiftNodes.valueAsNumber * HDDnode.valueAsNumber * 100) / Math.log(2)); ringtotal.value=Math.pow( 2 , resultado.value ); partreplica.value=(Replicas.valueAsNumber * Math.pow(2 , resultado.value))">
+				<input type="number" id="SwiftNodes" value="10"> Swift nodes?<br>
+				<input type="number" id="HDDnode" value="5" > <abbr title="SOC6 Uses the first HDD for SO, please consider this!">HDD per node?</abbr><br>
+				<input type="number" id="Replicas" value="3"> Replicas?<br><br>
+				Your Partition Power is: <b><output name="resultado"</output></b><br>
+				The total number of partitions in a ring is: <b><output name="ringtotal"></output></b><br>
+				The total number of part-replicas in a ring is: <b><output name="partreplica"></output></b><br>
+<p><a href="https://www.suse.com/products/suse-openstack-cloud/">SOC6</a> Uses the first HDD for SO, please consider this.</p>
+
+
+				</form>
+				</p>
+				
+			</div>
+		</main>
+	
+	</body>
+
+</html>
